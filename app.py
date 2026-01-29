@@ -18,8 +18,8 @@ st.markdown("<p style='text-align: center; color: #666;'>Enter soil and climate 
 # Load data and train model
 @st.cache_resource
 def load_model():
-    data1 = pd.read_csv('Datasets/crop_data1.csv')
-    data2 = pd.read_csv('Datasets/crop_data2.csv')
+    data1 = pd.read_csv('crop_data1.csv')
+    data2 = pd.read_csv('crop_data2.csv')
     data = pd.concat([data1, data2], ignore_index=True)
     
     X = data[['N', 'P', 'K', 'temperature', 'humidity', 'ph', 'rainfall']]
@@ -83,3 +83,4 @@ with st.sidebar:
 
 st.markdown("---")
 st.markdown("<p style='text-align: center; color: #888;'>Built with ❤️ | Crop Recommendation System</p>", unsafe_allow_html=True)
+
